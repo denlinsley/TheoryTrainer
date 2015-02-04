@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPages_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <title></title>
+  <asp:ContentPlaceHolder ID="head" runat="server">
+  </asp:ContentPlaceHolder>
+  <link href="../Styles/TheoryStyles.css" rel="stylesheet" />
+</head>
+<body>
+  <form id="form1" runat="server">
+    <div id="PageWrapper">
+      <header>Music Theory Trainer</header>
+      <nav>
+        <asp:Menu ID="MainMenu" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal"
+          StaticEnableDefaultPopOutImage="False">
+        </asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="False" />
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator="  &gt;  " CssClass="SiteMap"></asp:SiteMapPath>
+      </nav>
+      <section id="MainContent">
+        <%--<asp:SiteMapPath ID="SiteMapPath1" runat="server" PathSeparator="  &gt;  " CssClass="SiteMap"></asp:SiteMapPath>--%>
+        <asp:ContentPlaceHolder ID="cpMain" runat="server">
+          <p><em>Content currently under construction...please check back soon.</em></p>
+        </asp:ContentPlaceHolder>
+      </section>
+      <footer>
+        Copyright 2014 Dennis Linsley
+      </footer>
+    </div>
+  </form>
+</body>
+</html>

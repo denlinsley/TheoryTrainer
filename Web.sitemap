@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/" title="Home"  description="Home">
+        <siteMapNode url="~/Default.aspx" title="Home"  description="Go to the homepage" />
+        <!--<siteMapNode url="~/Intervals/Default.aspx" title="Intervals"  description="Choose a page to learn about intervals">
+            <siteMapNode url="~/Intervals/IntervalLesson.aspx" title="Interval Lesson"  description="Learn about intervals" />
+            <siteMapNode url="~/Intervals/IntervalTrainer.aspx" title="Interval Trainer"  description="Practice spelling intervals" />
+        </siteMapNode>-->
+        <siteMapNode url="~/Chords/Default.aspx" title="Chords"  description="Choose a page to learn about chords">
+            <siteMapNode url="~/Chords/ChordLesson.aspx" title="Chord Lesson"  description="Learn about chords" />
+            <siteMapNode url="~/Chords/ChordTrainer.aspx" title="Chord Trainer"  description="Practice spelling chords" />
+        </siteMapNode>
+        <!--<siteMapNode url="~/Harmony.aspx" title="Harmony"  description="Learn about harmony" />-->
+        <siteMapNode url="~/Links.aspx" title="Links"  description="Links to other music theory sites" />
+        <!--<siteMapNode url="~/Help.aspx " title="Help"  description="Get help with interactive features" />-->
+        <siteMapNode url="~/About/Default.aspx" title="About"  description="Read the bio or contact the author of this site">
+            <siteMapNode url="~/About/About.aspx" title="About Me"  description="Learn about the author of this site" />
+            <siteMapNode url="~/About/Contact.aspx" title="Contact" description="Contact form" />
+        </siteMapNode>
+    </siteMapNode>
+</siteMap>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="98b55c494dc24c61bf1787bf8c90c364" Name="Diagram1">
+        <EntityTypeShape EntityType="TheoryTrainerModel.SeventhChord" Width="1.875" PointX="7.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheoryTrainerModel.SeventhChordQuality" Width="1.5" PointX="5.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheoryTrainerModel.Triad" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheoryTrainerModel.TriadQuality" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TheoryTrainerModel.User" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="TheoryTrainerModel.FK_SeventhChord_SeventhChordQuality" ManuallyRouted="false" />
+        <AssociationConnector Association="TheoryTrainerModel.FK_Triad_TriadQuality" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

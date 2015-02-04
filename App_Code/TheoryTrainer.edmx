@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TheoryTrainerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="SeventhChord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Root" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Third" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fifth" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Seventh" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SeventhChordQualityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SeventhChordQuality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Triad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Root" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Third" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fifth" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TriadQualityId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TriadQuality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SessionPercentage" Type="float" Nullable="false" />
+          <Property Name="BestPercentage" Type="float" Nullable="false" />
+          <Property Name="CreateDateTime" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDateTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_SeventhChord_SeventhChordQuality">
+          <End Role="SeventhChordQuality" Type="Self.SeventhChordQuality" Multiplicity="1" />
+          <End Role="SeventhChord" Type="Self.SeventhChord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeventhChordQuality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SeventhChord">
+              <PropertyRef Name="SeventhChordQualityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Triad_TriadQuality">
+          <End Role="TriadQuality" Type="Self.TriadQuality" Multiplicity="1" />
+          <End Role="Triad" Type="Self.Triad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TriadQuality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Triad">
+              <PropertyRef Name="TriadQualityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TheoryTrainerModelStoreContainer">
+          <EntitySet Name="SeventhChord" EntityType="Self.SeventhChord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SeventhChordQuality" EntityType="Self.SeventhChordQuality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Triad" EntityType="Self.Triad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TriadQuality" EntityType="Self.TriadQuality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_SeventhChord_SeventhChordQuality" Association="Self.FK_SeventhChord_SeventhChordQuality">
+            <End Role="SeventhChordQuality" EntitySet="SeventhChordQuality" />
+            <End Role="SeventhChord" EntitySet="SeventhChord" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Triad_TriadQuality" Association="Self.FK_Triad_TriadQuality">
+            <End Role="TriadQuality" EntitySet="TriadQuality" />
+            <End Role="Triad" EntitySet="Triad" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TheoryTrainerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="SeventhChord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Root" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Third" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fifth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Seventh" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SeventhChordQualityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="SeventhChordQuality" Relationship="Self.FK_SeventhChord_SeventhChordQuality" FromRole="SeventhChord" ToRole="SeventhChordQuality" />
+        </EntityType>
+        <EntityType Name="SeventhChordQuality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="SeventhChords" Relationship="Self.FK_SeventhChord_SeventhChordQuality" FromRole="SeventhChordQuality" ToRole="SeventhChord" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Triad">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Root" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Third" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Fifth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TriadQualityId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TriadQuality" Relationship="Self.FK_Triad_TriadQuality" FromRole="Triad" ToRole="TriadQuality" />
+        </EntityType>
+        <EntityType Name="TriadQuality">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Triads" Relationship="Self.FK_Triad_TriadQuality" FromRole="TriadQuality" ToRole="Triad" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SessionPercentage" Type="Double" Nullable="false" />
+          <Property Name="BestPercentage" Type="Double" Nullable="false" />
+          <Property Name="CreateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDateTime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_SeventhChord_SeventhChordQuality">
+          <End Role="SeventhChordQuality" Type="Self.SeventhChordQuality" Multiplicity="1" />
+          <End Role="SeventhChord" Type="Self.SeventhChord" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SeventhChordQuality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SeventhChord">
+              <PropertyRef Name="SeventhChordQualityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Triad_TriadQuality">
+          <End Role="TriadQuality" Type="Self.TriadQuality" Multiplicity="1" />
+          <End Role="Triad" Type="Self.Triad" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TriadQuality">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Triad">
+              <PropertyRef Name="TriadQualityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TheoryTrainerEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SeventhChords" EntityType="Self.SeventhChord" />
+          <EntitySet Name="SeventhChordQualities" EntityType="Self.SeventhChordQuality" />
+          <EntitySet Name="Triads" EntityType="Self.Triad" />
+          <EntitySet Name="TriadQualities" EntityType="Self.TriadQuality" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK_SeventhChord_SeventhChordQuality" Association="Self.FK_SeventhChord_SeventhChordQuality">
+            <End Role="SeventhChordQuality" EntitySet="SeventhChordQualities" />
+            <End Role="SeventhChord" EntitySet="SeventhChords" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Triad_TriadQuality" Association="Self.FK_Triad_TriadQuality">
+            <End Role="TriadQuality" EntitySet="TriadQualities" />
+            <End Role="Triad" EntitySet="Triads" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TheoryTrainerModelStoreContainer" CdmEntityContainer="TheoryTrainerEntities">
+          <EntitySetMapping Name="SeventhChords">
+            <EntityTypeMapping TypeName="TheoryTrainerModel.SeventhChord">
+              <MappingFragment StoreEntitySet="SeventhChord">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Root" ColumnName="Root" />
+                <ScalarProperty Name="Third" ColumnName="Third" />
+                <ScalarProperty Name="Fifth" ColumnName="Fifth" />
+                <ScalarProperty Name="Seventh" ColumnName="Seventh" />
+                <ScalarProperty Name="SeventhChordQualityId" ColumnName="SeventhChordQualityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SeventhChordQualities">
+            <EntityTypeMapping TypeName="TheoryTrainerModel.SeventhChordQuality">
+              <MappingFragment StoreEntitySet="SeventhChordQuality">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Triads">
+            <EntityTypeMapping TypeName="TheoryTrainerModel.Triad">
+              <MappingFragment StoreEntitySet="Triad">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Root" ColumnName="Root" />
+                <ScalarProperty Name="Third" ColumnName="Third" />
+                <ScalarProperty Name="Fifth" ColumnName="Fifth" />
+                <ScalarProperty Name="TriadQualityId" ColumnName="TriadQualityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TriadQualities">
+            <EntityTypeMapping TypeName="TheoryTrainerModel.TriadQuality">
+              <MappingFragment StoreEntitySet="TriadQuality">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TheoryTrainerModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="SessionPercentage" ColumnName="SessionPercentage" />
+                <ScalarProperty Name="BestPercentage" ColumnName="BestPercentage" />
+                <ScalarProperty Name="CreateDateTime" ColumnName="CreateDateTime" />
+                <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

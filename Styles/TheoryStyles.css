@@ -1,0 +1,210 @@
+﻿*
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+}
+
+body
+{
+    margin: 0px;
+    background-color: #7ea463;
+}
+
+#PageWrapper
+{
+    width: 960px;
+    margin: auto;
+    background-color: whitesmoke;
+}
+
+header
+{
+    color: #ffffff;
+    background-color: #2a8ed1;
+    font-size: 40px;
+    width: 960px;
+    height: 50px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-image: url(WavyStaff.png);
+    background-size: contain;
+}
+
+nav
+{
+    margin-bottom: 10px;
+}
+
+
+aside#Quotes
+{
+    background-color: #ffffff;
+    border: thin solid black;
+    margin-top: 20px;
+    padding: 5px;
+    float: right;
+    width: 20%;
+}
+
+    aside#Quotes p
+    {
+        background-color: #ffffff;
+        font-size: 9px;
+        text-align: right;
+    }
+
+footer
+{
+    margin-top: 20px;
+    padding: 10px;
+    clear: both;
+    text-align: center;
+    font-style: italic;
+    color: #ffffff;
+    background-color: #2a8ed1;
+}
+
+
+
+/* Menu Styles (adapted from p.254) */
+#MainMenu
+{
+    background-color: black;
+    width: 940px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+    #MainMenu a
+    {
+        color: white;
+    }
+
+        #MainMenu a:visited
+        {
+            color: #2a8ed1;
+        }
+
+        #MainMenu a.level1
+        {
+            width: 120px;
+        }
+
+        #MainMenu a.level2
+        {
+            background-color: black;
+            width: 120px;
+            height: 30px;
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+
+        #MainMenu a:hover
+        {
+            color: #ff6a00;
+        }
+
+
+
+/* ChordTrainer Button styles */
+.NaturalButtons
+{
+    background-color: white;
+    color: black;
+    width: 75px;
+    height: 35px;
+    border: thin solid black;
+    margin-bottom: 5px;
+}
+
+.SharpFlatButtons
+{
+    background-color: black;
+    color: white;
+    width: 75px;
+    height: 35px;
+    border: thin solid black;
+    margin-bottom: 5px;
+}
+
+/* Cleaned up auto-styles on ChordTrainer page */
+.Speller
+{
+    width: 650px;
+    margin: auto;
+    float: left;
+}
+
+.ButtonTable
+{
+    width: 100%;
+}
+
+
+/* Error messages on Contact.aspx */
+.Error
+{
+    color: red;
+}
+
+/* Settings for types of chords on ChordTrainer page */
+aside#Settings
+{
+    background-color: #ffffff;
+    border: thin solid black;
+    margin-top: 20px;
+    padding: 5px;
+    float: right;
+    width: 15%;
+}
+
+/* For links outside of the main menu */
+a
+{
+    color: #2a8ed1;
+    text-decoration: none;
+}
+
+    a:hover
+    {
+        color: #ff6a00;
+        text-decoration: underline;
+    }
+
+
+.SiteMap
+{
+    margin-left: 11px;
+}
+
+    .SiteMap a
+    {
+        text-decoration: none;
+    }
+
+/* Main Content section that wraps the contect placeholder on master page */
+section#MainContent
+{
+    min-height: 960px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+section#DefaultPage
+{
+    width: 65%;
+    float: left;
+}
+
+p.LinkDescription
+{
+    margin-left: 20px;
+}
+
+input#ChordButton
+{
+    clear:both;
+    float: left;
+    margin-bottom: 20px;
+}

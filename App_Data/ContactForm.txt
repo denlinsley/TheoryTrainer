@@ -1,0 +1,9 @@
+﻿Hi Dennis,
+
+A user has left the following feedback at Music Theory Trainer:
+
+Name:              ##Name##
+E-mail address:    ##Email##
+Phone:			   ##Phone##
+Comments:          ##Comments##
+Rating:			   ##Rating##
